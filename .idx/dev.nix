@@ -7,6 +7,10 @@
     pkgs.socat
     pkgs.coreutils
     pkgs.gnugrep
+    pkgs.qemu
+    pkgs.wget
+    pkgs.git
+    pkgs.sudo
   ];
 
   services.docker.enable = true;
@@ -29,7 +33,6 @@
         docker run --name ubuntu-novnc \
           --shm-size 1g -d \
           --cap-add=SYS_ADMIN \
-          --privileged \
           -p 8080:10000 \
           -e VNC_PASSWD=password \
           -e PORT=10000 \
