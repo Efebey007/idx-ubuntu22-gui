@@ -29,6 +29,7 @@
         docker run --name ubuntu-novnc \
           --shm-size 1g -d \
           --cap-add=SYS_ADMIN \
+          --privileged \
           -p 8080:10000 \
           -e VNC_PASSWD=password \
           -e PORT=10000 \
